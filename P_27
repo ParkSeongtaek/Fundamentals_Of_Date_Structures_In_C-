@@ -1,0 +1,40 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+
+//P_27
+
+
+
+//1.
+//Horner의 법칙은 주어진 점 x0 에서 최소의 곱으로 다항식 A(x) = a(n)X^n + a(n-1)X^(n-1)..+a(0)*1
+//를 A(x) = (....(a(n)x0+a(n-1))x + ....)x0+a0
+//Horner의 법칙을 사용하여 다항식을 계산하는 C++ 프로그램을 작성해라
+//각 명령문이 몇번식 수행되는지 생각해봐라
+
+#define MAX 10000
+
+int a[MAX];
+int ONE(const int x, const int n, int idx = 0) {
+	if (idx == n) {
+		return a[n];
+	}
+	else {
+		return A_x(x, n, idx + 1) * x + a[idx];
+	}
+}
+//n+1 번 O(n)	
+
+//2.
+//n개 변수 x(n) ... x(1) 이 변수들이 가질 수 있는 가능한 모든 진리값의 조합을 구하고자함
+//ex) n=2; ture,true; false,true; ture,false; false,false;
+
+bool TWO_arr[MAX][MAX];
+
+int TWO_N;
+
+//n번 O(n)
+
+
+
