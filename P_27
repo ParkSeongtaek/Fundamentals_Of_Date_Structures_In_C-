@@ -21,7 +21,7 @@ int ONE(const int x, const int n, int idx = 0) {
 		return a[n];
 	}
 	else {
-		return A_x(x, n, idx + 1) * x + a[idx];
+		return ONE(x, n, idx + 1) * x + a[idx];
 	}
 }
 //n+1 번 O(n)	
@@ -30,11 +30,49 @@ int ONE(const int x, const int n, int idx = 0) {
 //n개 변수 x(n) ... x(1) 이 변수들이 가질 수 있는 가능한 모든 진리값의 조합을 구하고자함
 //ex) n=2; ture,true; false,true; ture,false; false,false;
 
-bool TWO_arr[MAX][MAX];
+int N=10;
+bool ** TWO_arr;
 
-int TWO_N;
+int TWO_Power(int N) {
+	if (N == 0)
+		return 1;
+	return TWO_Power(N - 1) * 2;
+
+}
+
+void TWO_make_arr() {
+	TWO_arr = new bool*[TWO_Power(N)];
+	for (int i = 0; i < TWO_Power(N); i++) {
+		TWO_arr[i] = new bool[N];
+	}
+}
+
+
+int TWO_N(int Y,int X){
+	if (X == N - 1) {
+		TWO_arr[Y][X] = true;
+		TWO_arr[Y + 1][X] = false;
+	}
+
+	for (int i = 0; i<Y/TWO_Power(X+1) ) {
+
+	}
+
+
+}
+
+void TWO() {
+
+}
+
 
 //n번 O(n)
+
+
+int main() {
+	
+}
+
 
 
 
