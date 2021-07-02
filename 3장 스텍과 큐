@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+
+//3.스텍과 큐
+
+//3.1 프로그램 템플릿을 이용한 선택 정렬
+template<class T>
+void Selection(T *a, const int n) 
+{//a[0]붙 a[n-1]까지 비감소 순으로 정렬한다
+	for (int i = 0; i < n; i++) {
+		int j = i;
+		//a[i]와 a[n-1] 사이에서 가장 작은 T를 찾는다
+		for (int k = i + 1; k < n; k++) {
+			if (a[k] < a[j])j = k;
+		}
+		swap(a[k], a[j]);
+	}
+}
